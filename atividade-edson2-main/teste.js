@@ -1,34 +1,31 @@
-class ContaBancaria {
-    constructor(depositar , sacar , verSaldo) {
-        this.depositar = depositar;
-        this.sacar = sacar;
-        this.verSaldo = verSaldo;
+class Produto {
+    constructor(nome, preco , quantidade) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
     
     }
 mostrarDados(){
-console.log(`depositar ${this.depositar}, sacar R$ ${this.sacar},verSaldo: ${this.verSaldo} `);
+console.log(`Produto ${this.nome}, preço R$ ${this.preco},quantidade: ${this.quantidade} `);
     }
 }
 vender(qtd){ 
-    if(qtd <= this.verSaldo){
-       this.verSaldo -= qtd;
+    if(qtd <= this.quantidade){
+       this.quantidade -= qtd;
        console.log('Venda realizada. Quantidade atual ${this.quantidade} ')
     }
     }
-    else {
+      else {
         console.log("Estoque insulficiente para venda");
     }
     repor(qtd){
-        this.verSaldo += qtd;
+        this.quantidade += qtd;
         console.log('Reposição feita. quantidade atual: ${this.quantidade}');
     }
 
-let conta = new ContaBancaria("Ana",1000);
-conta.sacar(200); // Saque de 200 realizado
-conta.verSaldo(); // Saldo atual : 800
-conta.sacar(1000);// Saldo insulficiente
-//ContaBancaria.mostrarDados();
-//ContaBancaria.VerSaldo(15);
+let produto = new Produto("Caneta",2.5,100);
+//produto.mostrarDados();
+//produto.vender(15);
 produto.repor(20);
 
 let produto2
